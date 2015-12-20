@@ -1,0 +1,47 @@
+{
+  "name": "vue-focus",
+  "description": "Reusable focus directive for reusable Vue.js components",
+  "version": "0.1.0",
+  "author": "Denis Karabaza <denis.karabaza@gmail.com>",
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/simplesmiler/vue-focus/issues"
+  },
+  "dependencies": {
+    "envify": "^3.4.0",
+    "vue": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "mkdirp": "^0.5.1",
+    "rollup": "^0.21.2",
+    "rollup-plugin-replace": "^1.1.0",
+    "uglify-js": "^2.6.1"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "homepage": "https://github.com/simplesmiler/vue-focus",
+  "keywords": [
+    "focus",
+    "reusable",
+    "vue",
+    "vue-directive",
+    "vuejs"
+  ],
+  "license": "MIT",
+  "main": "dist/vue-focus.common.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplesmiler/vue-focus"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint index.js build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
