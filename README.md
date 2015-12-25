@@ -2,9 +2,26 @@
 
 > A set of reusable focus directives for reusable [Vue.js](https://github.com/vuejs/vue) components
 
+[![npm version](https://img.shields.io/npm/v/vue-focus.svg)](https://www.npmjs.com/package/vue-focus)
+
 ## Overview
 
-@TODO: write overview
+It can be tricky to manage input focus in your components. You always have to fall back to accessing DOM elements and calling `.focus` or `.blur` on them.
+
+Well not anymore. `vue-focus` lets you manage input focus from the safety of your view model. It consists of three directives:
+
+- `v-focus-auto` auto focuses the element whenever it enters the DOM;
+- `v-focus-model="<expression>"` binds the focus to the expression in a two-way manner (model changes cause focus to adjust, and focus changes cause model to adjust);
+- `v-focus="<expression>"` binds the focus to the expression in a one-way manner (model changes cause focus to adjust).
+
+Why the `v-focus` exists when there is `v-focus-model`, you might ask? Well, if you use a condition or a method to determine the focus, then you can not use a two-way bound directive, as it requires the expression to be settable.
+
+Now you are ready to [check out the examples](https://jsfiddle.net/simplesmiler/k5vxp69o/), [read the docs](#api) or [file an issue](https://github.com/simplesmiler/vue-focus/issues).
+
+## Use cases
+
+- Focus a field when the modal appears
+- Show a hint for the focused field
 
 ## Requirements
 
@@ -99,7 +116,7 @@ export default {
 A mixin that includes all the directives at once, and makes them available to the component under their default names.
 
 ``` js
-import VueFocus from 'vue-focus';
+import * as VueFocus from 'vue-focus';
 
 export default {
   mixins: [ VueFocus.mixin ],
