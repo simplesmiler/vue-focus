@@ -72,6 +72,9 @@ function generateBundledProd() {
     .then(function(code) {
       return uglify.minify(code, {
         fromString: true,
+        compress: {
+          screw_ie8: true,
+        },
       }).code;
     })
     .then(function(code) {
