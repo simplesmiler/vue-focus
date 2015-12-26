@@ -1,6 +1,6 @@
 {
   "name": "vue-focus",
-  "description": "Reusable focus directive for reusable Vue.js components",
+  "description": "A set of reusable focus directives for reusable Vue.js components",
   "version": "0.1.1",
   "author": "Denis Karabaza <denis.karabaza@gmail.com>",
   "browserify": {
