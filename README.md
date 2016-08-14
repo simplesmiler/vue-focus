@@ -38,9 +38,9 @@ $ npm install vue-focus --save
 From CDN:
 
 ``` html
-<script src="https://cdn.rawgit.com/simplesmiler/vue-focus/0.1.1/dist/vue-focus.js"></script>
+<script src="https://cdn.rawgit.com/simplesmiler/vue-focus/0.1.2/dist/vue-focus.js"></script>
 <!-- OR -->
-<script src="https://cdn.rawgit.com/simplesmiler/vue-focus/0.1.1/dist/vue-focus.min.js"></script>
+<script src="https://cdn.rawgit.com/simplesmiler/vue-focus/0.1.2/dist/vue-focus.min.js"></script>
 ```
 
 ## Usage
