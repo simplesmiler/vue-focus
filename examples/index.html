@@ -8,47 +8,55 @@
 </head>
 <body>
 
-  <h3><code>Example 1: v-focus-auto</code></h3>
+  <h3><code>Example 1: Autofocus</code></h3>
   <div id="example1">
     <p><label><input type="checkbox" v-model="shown"> Show the field</label></p>
-    <p v-if="shown"><input type="text" v-focus-auto></p>
+    <p v-if="shown"><input type="text" v-focus="true"></p>
     <p>NOTE: field is focused from the start, and gains focus whenever it enters the DOM.</p>
   </div>
 
   <hr/>
 
-  <h3><code>Example 2: v-focus-model</code></h3>
+  <h3><code>Example 2: Show a hint for the focused field</code></h3>
   <div id="example2">
     <div><pre>{{ $data | json }}</pre></div>
-    <p><label><input type="checkbox" v-model="focused"> Focused</label></p>
-    <p><input type="text" v-focus-model="focused"></p>
-    <p>NOTE: at first you seem to not be able to not uncheck the checkbox. This is because the input loses focus first, which makes the checkbox go to the unchecked state before you release the click.</p>
+    <p>
+      <input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">
+      <span v-if="focused">Focused!</span>
+    </p>
   </div>
 
   <hr/>
 
-  <h3><code>Example 3: v-focus</code></h3>
+  <h3><code>Example 3: Move focus</code></h3>
   <div id="example3">
     <div><pre>{{ { focused: focused } | json }}</pre></div>
     <p v-for="item in items">
       <input type="text"
-             v-model="item.value"
-             @keydown.down.prevent="moveDown"
-             @keydown.up.prevent="moveUp"
-             v-focus="$index === focused"
-             @focus="focused = $index"
-             @blur="focused = null"
-             >
+         v-model="item.value"
+         @keydown.down.prevent="moveDown"
+         @keydown.up.prevent="moveUp"
+         v-focus="$index === focused"
+         @focus="focused = $index"
+         @blur="focused = null"
+       >
     </p>
-    <p>NOTE: move between the fields with ↑ and ↓ keys.</p>
+    <p>NOTE: move the focus with ↑ and ↓ keys.</p>
   </div>
 
   <hr/>
 
-  <h3><code>Example 4: custom label</code></h3>
+  <h3><code>Example 4: Custom label</code></h3>
   <div id="example4">
     <div><pre>{{ $data | json }}</pre></div>
-    <p><span role="label" @mousedown.prevent="focused = true">Label</span> <input type="text" v-focus-model="focused"></p>
+    <p>
+      <span role="label" @mousedown.prevent="focused = true">Label</span>
+      <input type="text"
+        v-focus="focused"
+        @focus="focused = true"
+        @blur="focused = false"
+      >
+    </p>
     <p>NOTE: click on the label to focus the input.</p>
   </div>
 

@@ -44,6 +44,12 @@ export var focusModel = {
   priority: 1000,
 
   bind: function() {
+    util.warn(
+      this.name + '="' +
+      this.expression + '" is deprecated, ' +
+      'use v-focus="' + this.expression + '" @focus="' + this.expression + ' = true" @blur="' + this.expression + ' = false" instead'
+    );
+
     var self = this;
     this.bound = true;
 
@@ -97,6 +103,11 @@ export var focusModel = {
 export var focusAuto = {
   priority: 100,
   bind: function() {
+    util.warn(
+      this.name + ' is deprecated, ' +
+      'use v-focus="true" instead'
+    );
+
     var self = this;
     this.bound = true;
 

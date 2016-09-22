@@ -1,27 +1,23 @@
 # vue-focus
 
-> A set of reusable focus directives for reusable [Vue.js](https://github.com/vuejs/vue) components
+> A reusable focus directive for reusable [Vue.js](https://github.com/vuejs/vue) components
 
 [![npm version](https://img.shields.io/npm/v/vue-focus.svg)](https://www.npmjs.com/package/vue-focus)
 
 ## Overview
 
-It can be tricky to manage input focus in your components. You always have to fall back to accessing DOM elements and calling `.focus` or `.blur` on them.
+It can be tricky to manage input focus. You always have to fall back to accessing DOM elements and calling `.focus` or `.blur` on them.
 
-Well not anymore. `vue-focus` lets you manage input focus from the safety of your view model. It consists of three directives:
+Well not anymore. `vue-focus` lets you manage focus from the safety of your view model.
 
-- `v-focus-auto` auto focuses the element whenever it enters the DOM;
-- `v-focus-model="<expression>"` binds the focus to the expression in a two-way manner (model changes cause focus to adjust, and focus changes cause model to adjust);
-- `v-focus="<expression>"` binds the focus to the expression in a one-way manner (model changes cause focus to adjust).
-
-Why the `v-focus` exists when there is `v-focus-model`, you might ask? Well, if you use a condition or a method to determine the focus, then you can not use a two-way bound directive, as it requires the expression to be settable.
-
-Now you are ready to [check out the examples](https://jsfiddle.net/simplesmiler/k5vxp69o/), [read the docs](#api) or [file an issue](https://github.com/simplesmiler/vue-focus/issues).
+[Check out the examples](https://jsfiddle.net/simplesmiler/k5vxp69o/), [read the docs](#api) or [file an issue](https://github.com/simplesmiler/vue-focus/issues).
 
 ## Use cases
 
-- Focus a field when the modal appears
-- Show a hint for the focused field
+- Focus the field when the modal windows appears
+- Track the focus to show a hint for the focused field
+- Move between fields with cursor keys
+- Implement custom focus-related controls (e.g labels)
 
 ## Requirements
 
@@ -32,49 +28,40 @@ Now you are ready to [check out the examples](https://jsfiddle.net/simplesmiler/
 From npm:
 
 ``` sh
-$ npm install vue-focus --save
+$ npm install vue-focus@^1.0 --save
 ```
 
 From CDN:
 
 ``` html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/0.1.2/vue-focus.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/1.0.0/vue-focus.js"></script>
 <!-- OR -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/0.1.2/vue-focus.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/1.0.0/vue-focus.min.js"></script>
 ```
-
-## Usage
-
-1. Make directives available to your component (either by mixin or one by one)
-2. Use directives on the element
 
 ## API
 
 ### `focus`
 
-A directive that binds focus to the expression in a one-way manner, so that the element recieves focus when you set the bound value to be `truthy` and loses focus when you set the bound value to be `falsy`. It takes a single argument: an expression to be bound.
-
-> NOTE: This is a one-way bound directive. If you need a two-way bound version, please refer to [focus-model](#focus-model).
+A directive that binds focus to the expression in a one-way manner, so that the element recieves focus when the expression becomes `truthy` and loses focus when the expression becomes `falsy`.
 
 ``` js
 import { focus } from 'vue-focus';
 
 export default {
   directives: { focus: focus },
-  template: '<input type="text" v-for="item in items" v-model="item.value" v-focus="$index === focused">',
+  template: '<input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">',
   data: function() {
     return {
-      focused: 0,
-      items: [
-        { value: 'hello' },
-        { value: 'world' },
-      ],
+      focused: false,
     };
   },
 };
 ```
 
 ### `focus-model`
+
+> NOTE: this directive is deprecated. Use `v-focus="expression" @focus="expression = true" @blur="expression = false"` instead.
 
 A directive that binds focus to the expression in a two-way manner, so that the element recieves focus when you change the bound value to `true` and loses focus when you change the bound value to `false`, **and vice versa**, sets the bound value to `true` when element recieves focus and sets the bound value to `false` when element loses focus. It takes a single argument: an expression to be bound.
 
@@ -98,6 +85,8 @@ export default {
 
 ### `focus-auto`
 
+> NOTE: this directive is deprecated. Use `v-focus="true"` instead.
+
 A directive that makes the element gain focus whenever it enters the DOM (either via initial costruction or by the means of `:is`, `v-if` or `v-for`). It takes no arguments.
 
 > NOTE: This is a reactive replacement for the native html attribute `autofocus`, which does not work after page has finished loading.
@@ -113,14 +102,14 @@ export default {
 
 ### `mixin`
 
-A mixin that includes all the directives at once, and makes them available to the component under their default names.
+A mixin that makes the `v-focus` directive available to the component under the default name.
 
 ``` js
-import * as VueFocus from 'vue-focus';
+import { mixin as focusMixin }  from 'vue-focus';
 
 export default {
-  mixins: [ VueFocus.mixin ],
-  template: '<input type="text" v-focus-model="focused" v-focus-auto>',
+  mixins: [ focusMixin ],
+  template: '<input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">',
   data: function() {
     return {
       focused: false,
