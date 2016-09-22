@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Examples for vue-focus</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+  <script src="../dist/vue-focus.js"></script>
+</head>
+<body>
+
+  <h3><code>Example 1: v-focus-auto</code></h3>
+  <div id="example1">
+    <p><label><input type="checkbox" v-model="shown"> Show the field</label></p>
+    <p v-if="shown"><input type="text" v-focus-auto></p>
+    <p>NOTE: field is focused from the start, and gains focus whenever it enters the DOM.</p>
+  </div>
+
+  <hr/>
+
+  <h3><code>Example 2: v-focus-model</code></h3>
+  <div id="example2">
+    <div><pre>{{ $data | json }}</pre></div>
+    <p><label><input type="checkbox" v-model="focused"> Focused</label></p>
+    <p><input type="text" v-focus-model="focused"></p>
+    <p>NOTE: at first you seem to not be able to not uncheck the checkbox. This is because the input loses focus first, which makes the checkbox go to the unchecked state before you release the click.</p>
+  </div>
+
+  <hr/>
+
+  <h3><code>Example 3: v-focus</code></h3>
+  <div id="example3">
+    <div><pre>{{ { focused: focused } | json }}</pre></div>
+    <p v-for="item in items">
+      <input type="text"
+             v-model="item.value"
+             @keydown.down.prevent="moveDown"
+             @keydown.up.prevent="moveUp"
+             v-focus="$index === focused"
+             @focus="focused = $index"
+             @blur="focused = null"
+             >
+    </p>
+    <p>NOTE: move between the fields with ↑ and ↓ keys.</p>
+  </div>
+
+  <hr/>
+
+  <h3><code>Example 4: custom label</code></h3>
+  <div id="example4">
+    <div><pre>{{ $data | json }}</pre></div>
+    <p><span role="label" @mousedown.prevent="focused = true">Label</span> <input type="text" v-focus-model="focused"></p>
+    <p>NOTE: click on the label to focus the input.</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#example1',
+      mixins: [ VueFocus.mixin ],
+      data: {
+        shown: true,
+      },
+    });
+
+    new Vue({
+      el: '#example2',
+      mixins: [ VueFocus.mixin ],
+      data: {
+        focused: false,
+      },
+    });
+
+    new Vue({
+      el: '#example3',
+      mixins: [ VueFocus.mixin ],
+      data: {
+        focused: null,
+        items: [
+          { value: 'hello' },
+          { value: 'world' },
+          { value: '' },
+          { value: 'hello' },
+          { value: 'world' },
+          { value: '' },
+        ],
+      },
+      methods: {
+        moveDown: function() {
+          this.focused = Math.min(this.focused + 1, this.items.length - 1);
+        },
+        moveUp: function() {
+          this.focused = Math.max(this.focused - 1, 0);
+        },
+      },
+    });
+
+    new Vue({
+      el: '#example4',
+      mixins: [ VueFocus.mixin ],
+      data: {
+        focused: false,
+      },
+    });
+  </script>
+
+</body>
+</html>
