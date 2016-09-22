@@ -1,3 +1,8 @@
+## [1.0.0] - 2016-09-22
+
+## Changed
+- `v-focus-model` and `v-focus-auto` are now deprecated
+
 ## [0.1.2] - 2016-08-14
 
 ### Fixed
@@ -24,3 +29,4 @@ Initial release
 
 [0.1.1]: https://github.com/simplesmiler/vue-focus/compare/0.1.0...0.1.1
 [0.1.2]: https://github.com/simplesmiler/vue-focus/compare/0.1.1...0.1.2
+[1.0.0]: https://github.com/simplesmiler/vue-focus/compare/0.1.2...1.0.0
