@@ -1,3 +1,9 @@
+## [2.0.0-rc1] - 2016-09-22
+
+## Breaking changes
+- Vue 2.0 now required
+- `v-focus-model` and `v-focus-auto` are removed
+
 ## [1.0.0] - 2016-09-22
 
 ## Changed
@@ -30,3 +36,4 @@ Initial release
 [0.1.1]: https://github.com/simplesmiler/vue-focus/compare/0.1.0...0.1.1
 [0.1.2]: https://github.com/simplesmiler/vue-focus/compare/0.1.1...0.1.2
 [1.0.0]: https://github.com/simplesmiler/vue-focus/compare/0.1.2...1.0.0
+[2.0.0-rc1]: https://github.com/simplesmiler/vue-focus/compare/1.0.0...2.0.0-rc1

@@ -1,7 +1,7 @@
 {
   "name": "vue-focus",
   "description": "A set of reusable focus directives for reusable Vue.js components",
-  "version": "1.0.0",
+  "version": "2.0.0-rc1",
   "author": "Denis Karabaza <denis.karabaza@gmail.com>",
   "browserify": {
     "transform": [
@@ -36,7 +36,7 @@
   "license": "MIT",
   "main": "dist/vue-focus.common.js",
   "peerDependencies": {
-    "vue": "^1.0.0"
+    "vue": "^2.0.0"
   },
   "repository": {
     "type": "git",
