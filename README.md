@@ -21,22 +21,22 @@ Well not anymore. `vue-focus` lets you manage focus from the safety of your view
 
 ## Requirements
 
-- vue: ^1.0.0
+- vue: ^2.0.0
 
 ## Install
 
 From npm:
 
 ``` sh
-$ npm install vue-focus@^1.0 --save
+$ npm install vue-focus --save
 ```
 
 From CDN:
 
 ``` html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/1.0.0/vue-focus.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.0.0/vue-focus.js"></script>
 <!-- OR -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/1.0.0/vue-focus.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.0.0/vue-focus.min.js"></script>
 ```
 
 ## API
@@ -56,47 +56,6 @@ export default {
       focused: false,
     };
   },
-};
-```
-
-### `focus-model`
-
-> NOTE: this directive is deprecated. Use `v-focus="expression" @focus="expression = true" @blur="expression = false"` instead.
-
-A directive that binds focus to the expression in a two-way manner, so that the element recieves focus when you change the bound value to `true` and loses focus when you change the bound value to `false`, **and vice versa**, sets the bound value to `true` when element recieves focus and sets the bound value to `false` when element loses focus. It takes a single argument: an expression to be bound.
-
-> NOTE: This is a two-way bound directive. If you need a one-way bound version, please refer to [focus](#focus).
-
-> NOTE: The expression has to be settable, and has to evaluate to a boolean value.
-
-``` js
-import { focusModel } from 'vue-focus';
-
-export default {
-  directives: { focusModel: focusModel },
-  template: '<input type="text" v-focus-model="focused">',
-  data: function() {
-    return {
-      focused: false,
-    };
-  },
-};
-```
-
-### `focus-auto`
-
-> NOTE: this directive is deprecated. Use `v-focus="true"` instead.
-
-A directive that makes the element gain focus whenever it enters the DOM (either via initial costruction or by the means of `:is`, `v-if` or `v-for`). It takes no arguments.
-
-> NOTE: This is a reactive replacement for the native html attribute `autofocus`, which does not work after page has finished loading.
-
-``` js
-import { focusAuto } from 'vue-focus';
-
-export default {
-  directives: { focusAuto: focusAuto },
-  template: '<input type="text" v-focus-auto>',
 };
 ```
 
@@ -121,7 +80,6 @@ export default {
 ## Caveats
 
 1. Although you can write an input that gains focus immediately after loosing it, this is not recommended, as two such inputs will fall into infinite recursion and freeze the browser.
-2. Prior to `vue@1.0` views were able to inherit assets from the parent views, which made it possible to define the directive on the root view and have it available across the whole view hierarchy. Since `vue@1.0` this is not possible. If you still want to define the directive application-wide, you should `Vue.directive('<directive-name>', <directive>);` in your application entry point for every directive you need. But bear in mind that this introduces implicit dependency for your components, making them less reusable.
 
 ## Notes
 

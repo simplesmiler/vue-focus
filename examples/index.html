@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Examples for vue-focus</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-rc.6/vue.js"></script>
   <script src="../dist/vue-focus.js"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 
   <h3><code>Example 2: Show a hint for the focused field</code></h3>
   <div id="example2">
-    <div><pre>{{ $data | json }}</pre></div>
+    <div><pre>{{ $data }}</pre></div>
     <p>
       <input type="text" v-focus="focused" @focus="focused = true" @blur="focused = false">
       <span v-if="focused">Focused!</span>
@@ -30,14 +30,14 @@
 
   <h3><code>Example 3: Move focus</code></h3>
   <div id="example3">
-    <div><pre>{{ { focused: focused } | json }}</pre></div>
-    <p v-for="item in items">
+    <div><pre>{{ { focused: focused } }}</pre></div>
+    <p v-for="(item, index) in items">
       <input type="text"
          v-model="item.value"
          @keydown.down.prevent="moveDown"
          @keydown.up.prevent="moveUp"
-         v-focus="$index === focused"
-         @focus="focused = $index"
+         v-focus="index === focused"
+         @focus="focused = index"
          @blur="focused = null"
        >
     </p>
@@ -48,7 +48,7 @@
 
   <h3><code>Example 4: Custom label</code></h3>
   <div id="example4">
-    <div><pre>{{ $data | json }}</pre></div>
+    <div><pre>{{ $data }}</pre></div>
     <p>
       <span role="label" @mousedown.prevent="focused = true">Label</span>
       <input type="text"
