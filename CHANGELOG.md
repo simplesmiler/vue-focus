@@ -1,3 +1,8 @@
+## [2.0.0-rc2] - 2016-09-28
+
+## Fixed
+- Incorrect dependency on Vue
+
 ## [2.0.0-rc1] - 2016-09-22
 
 ## Breaking changes
@@ -37,3 +42,4 @@ Initial release
 [0.1.2]: https://github.com/simplesmiler/vue-focus/compare/0.1.1...0.1.2
 [1.0.0]: https://github.com/simplesmiler/vue-focus/compare/0.1.2...1.0.0
 [2.0.0-rc1]: https://github.com/simplesmiler/vue-focus/compare/1.0.0...2.0.0-rc1
+[2.0.0-rc2]: https://github.com/simplesmiler/vue-focus/compare/2.0.0-rc1...2.0.0-rc2
