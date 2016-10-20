@@ -1,3 +1,7 @@
+## [2.0.0] - 2016-10-20
+
+No changes from 2.0.0-rc2
+
 ## [2.0.0-rc2] - 2016-09-28
 
 ## Fixed
@@ -43,3 +47,4 @@ Initial release
 [1.0.0]: https://github.com/simplesmiler/vue-focus/compare/0.1.2...1.0.0
 [2.0.0-rc1]: https://github.com/simplesmiler/vue-focus/compare/1.0.0...2.0.0-rc1
 [2.0.0-rc2]: https://github.com/simplesmiler/vue-focus/compare/2.0.0-rc1...2.0.0-rc2
+[2.0.0]: https://github.com/simplesmiler/vue-focus/compare/2.0.0-rc2...2.0.0
