@@ -23,6 +23,8 @@ Well not anymore. `vue-focus` lets you manage focus from the safety of your view
 
 - vue: ^2.0.0
 
+If you need a version for Vue 1, try `vue-focus@1.0`.
+
 ## Install
 
 From npm:
