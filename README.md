@@ -45,7 +45,7 @@ From CDN:
 
 ### `focus`
 
-A directive that binds focus to the expression in a one-way manner, so that the element recieves focus when the expression becomes `truthy` and loses focus when the expression becomes `falsy`.
+A directive that binds focus to the expression in a one-way manner, so that the element receives focus when the expression becomes `truthy` and loses focus when the expression becomes `falsy`.
 
 ``` js
 import { focus } from 'vue-focus';
@@ -85,7 +85,7 @@ export default {
 
 ## Notes
 
-Form elements are not the only elements that are able to receive focus. The list also includes links, element with `tabindex` attribute set and elements with `contentEditable` set to `true`.
+Form elements are not the only elements that are able to receive focus. The list also includes links, elements with `tabindex` attribute set and elements with `contentEditable` set to `true`.
 
 ## License
 
