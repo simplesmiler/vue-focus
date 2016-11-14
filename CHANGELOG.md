@@ -1,3 +1,8 @@
+## [2.1.0] - 2016-10-20
+
+## Added
+- `.lazy` modifier to mimic v1 behavior
+
 ## [2.0.0] - 2016-10-20
 
 No changes from 2.0.0-rc2
@@ -48,3 +53,4 @@ Initial release
 [2.0.0-rc1]: https://github.com/simplesmiler/vue-focus/compare/1.0.0...2.0.0-rc1
 [2.0.0-rc2]: https://github.com/simplesmiler/vue-focus/compare/2.0.0-rc1...2.0.0-rc2
 [2.0.0]: https://github.com/simplesmiler/vue-focus/compare/2.0.0-rc2...2.0.0
+[2.1.0]: https://github.com/simplesmiler/vue-focus/compare/2.0.0...2.1.0

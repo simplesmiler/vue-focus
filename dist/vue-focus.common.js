@@ -3,7 +3,7 @@
 var Vue = require('vue');
 Vue = 'default' in Vue ? Vue['default'] : Vue;
 
-var version = '2.0.0';
+var version = '2.1.0';
 
 var compatible = (/^2\./).test(Vue.version);
 if (!compatible) {
@@ -17,6 +17,12 @@ var focus = {
   },
 
   componentUpdated: function(el, binding) {
+    if (binding.modifiers.lazy) {
+      if (Boolean(binding.value) === Boolean(binding.oldValue)) {
+        return;
+      }
+    }
+
     if (binding.value) el.focus();
     else el.blur();
   },

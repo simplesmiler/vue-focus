@@ -36,9 +36,9 @@ $ npm install vue-focus --save
 From CDN:
 
 ``` html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.0.0/vue-focus.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.1.0/vue-focus.js"></script>
 <!-- OR -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.0.0/vue-focus.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-focus/2.1.0/vue-focus.min.js"></script>
 ```
 
 ## API
