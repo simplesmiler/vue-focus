@@ -10,7 +10,7 @@ It can be tricky to manage input focus. You always have to fall back to accessin
 
 Well not anymore. `vue-focus` lets you manage focus from the safety of your view model.
 
-[Check out the examples](https://jsfiddle.net/simplesmiler/k5vxp69o/), [read the docs](#api) or [file an issue](https://github.com/simplesmiler/vue-focus/issues).
+[Check out the examples](https://jsfiddle.net/simplesmiler/zak1t6o8/), [read the docs](#api) or [file an issue](https://github.com/simplesmiler/vue-focus/issues).
 
 ## Use cases
 
