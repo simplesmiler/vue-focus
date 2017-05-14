@@ -11,7 +11,12 @@
 
   var focus = {
     inserted: function(el, binding) {
-      if (binding.value) el.focus();
+      if (binding.value) {
+        el.focus();
+        if (binding.modifiers.select) {
+          el.select();
+        }
+      }
       else el.blur();
     },
 
@@ -22,7 +27,12 @@
         }
       }
 
-      if (binding.value) el.focus();
+      if (binding.value) {
+        el.focus();
+        if (binding.modifiers.select) {
+          el.select();
+        }
+      }
       else el.blur();
     },
   };
