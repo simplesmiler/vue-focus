@@ -12,7 +12,12 @@ if (!compatible) {
 
 var focus = {
   inserted: function(el, binding) {
-    if (binding.value) el.focus();
+    if (binding.value) {
+      el.focus();
+      if (binding.modifiers.select) {
+        el.select();
+      }
+    }
     else el.blur();
   },
 
@@ -23,7 +28,12 @@ var focus = {
       }
     }
 
-    if (binding.value) el.focus();
+    if (binding.value) {
+      el.focus();
+      if (binding.modifiers.select) {
+        el.select();
+      }
+    }
     else el.blur();
   },
 };

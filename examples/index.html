@@ -59,6 +59,21 @@
     </p>
     <p>NOTE: click on the label to focus the input.</p>
   </div>
+  <hr/>
+
+  <h3><code>Example 5: Select Text on Focus</code></h3>
+  <div id="example5">
+    <div><pre>{{ $data }}</pre></div>
+    <p>
+      <input type="text"
+        value="Change me"
+        v-focus.select="focused"
+        @focus="focused = true"
+        @blur="focused = false"
+      >
+    </p>
+    <p>NOTE: click text input to focus and select text.</p>
+  </div>
 
   <script>
     new Vue({
@@ -103,6 +118,15 @@
 
     new Vue({
       el: '#example4',
+      mixins: [ VueFocus.mixin ],
+      data: {
+        focused: false,
+      },
+    });
+
+
+    new Vue({
+      el: '#example5',
       mixins: [ VueFocus.mixin ],
       data: {
         focused: false,
