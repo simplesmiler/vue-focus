@@ -20,7 +20,7 @@ export var focus = {
       }
     }
 
-    if (binding.value) el.focus();
+    if (binding.value && binding.oldValue !== binding.value) el.focus();
     else el.blur();
   },
 };
