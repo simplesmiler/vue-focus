@@ -83,7 +83,7 @@ export default {
 
 ## Caveats
 
-1. Although you can write an input that gains focus immediately after loosing it, this is not recommended, as two such inputs will fall into infinite recursion and freeze the browser.
+1. Although you can write an input that gains focus immediately after losing it, this is not recommended, as two such inputs will fall into infinite recursion and freeze the browser.
 
 ## Notes
 
