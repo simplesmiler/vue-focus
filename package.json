@@ -15,6 +15,7 @@
     "loose-envify": "^1.2.0"
   },
   "devDependencies": {
+    "@types/vue": "^2.0.0",
     "eslint": "^1.10.3",
     "mkdirp": "^0.5.1",
     "rollup": "^0.21.2",
@@ -23,6 +24,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "dist"
   ],
   "homepage": "https://github.com/simplesmiler/vue-focus",
@@ -35,6 +37,7 @@
   ],
   "license": "MIT",
   "main": "dist/vue-focus.common.js",
+  "types": "index.d.ts",
   "peerDependencies": {
     "vue": "^2.0.0"
   },
